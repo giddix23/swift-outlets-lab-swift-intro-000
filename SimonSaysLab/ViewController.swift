@@ -32,11 +32,11 @@ class ViewController: UIViewController {
     }
     @IBAction func yellowButton(_ sender: Any) {
         simonSaysGame.guessYellow()
-       checkWin()
+        checkWin()
     }
     @IBAction func blueButton(_ sender: Any) {
         simonSaysGame.guessBlue()
-       checkWin()
+        checkWin()
     }
     
     func checkWin(){

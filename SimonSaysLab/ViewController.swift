@@ -24,26 +24,33 @@ class ViewController: UIViewController {
 
     @IBAction func redButton(_ sender: Any) {
         simonSaysGame.guessRed()
+        buttonsClicked += 1
         checkWin()
     }
     @IBAction func greenButton(_ sender: Any) {
         simonSaysGame.guessGreen()
+        buttonsClicked += 1
         checkWin()
     }
     @IBAction func yellowButton(_ sender: Any) {
         simonSaysGame.guessYellow()
+        buttonsClicked += 1
         checkWin()
     }
     @IBAction func blueButton(_ sender: Any) {
         simonSaysGame.guessBlue()
+        buttonsClicked += 1
         checkWin()
     }
     
     func checkWin(){
-        if simonSaysGame.wonGame() {
+        if  buttonsClicked == 5 && simonSaysGame.wonGame() {
             winLabel.isHidden = false
             winLabel.text = "You WON!!!"
-        } 
+        } else if buttonsClicked == 5 && !(simonSaysGame.wonGame()) {
+            winLabel.isHidden = false
+            winLabel.text = "Nope, try again"
+        }
     }
     
 }
